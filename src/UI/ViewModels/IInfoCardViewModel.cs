@@ -1,5 +1,5 @@
 ﻿namespace UI.ViewModels;
 
-internal interface IInfoCardViewModel
+internal interface IInfoCardViewModel : IBaseViewModel
 {
 }

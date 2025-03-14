@@ -1,5 +1,5 @@
 ﻿namespace UI.ViewModels;
 
-internal interface IDashboardViewModel
+internal interface IDashboardViewModel : IBaseViewModel
 {
 }

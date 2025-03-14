@@ -75,7 +75,9 @@
                     Margin="20 30"
                     Background="#46558a"/>
                 
-                <Button Style="{StaticResource MenuButton}">
+                <Button 
+                    Style="{StaticResource MenuButton}"
+                    Command="{Binding NavigateToDashboardViewCommand}">
                     <StackPanel
                         Orientation="Horizontal">
                         <materialDesign:PackIcon
@@ -83,6 +85,20 @@
                             Style="{StaticResource MenuButtonIcon}"/>
                         <TextBlock
                             Text="Start"
+                            Style="{StaticResource MenuButtonText}"/>
+                    </StackPanel>
+                </Button>
+                
+                <Button 
+                    Style="{StaticResource MenuButton}"
+                    Command="{Binding NavigateToMemoryViewCommand}">
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <materialDesign:PackIcon
+                            Kind="Memory"
+                            Style="{StaticResource MenuButtonIcon}"/>
+                        <TextBlock
+                            Text="Memory"
                             Style="{StaticResource MenuButtonText}"/>
                     </StackPanel>
                 </Button>

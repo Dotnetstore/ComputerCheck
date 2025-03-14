@@ -21,12 +21,14 @@ public partial class App
         IServiceCollection services = new ServiceCollection();
         
         services
-            .AddScoped<IMainViewModel, MainViewModel>()
-            .AddScoped<IInfoCardViewModel, InfoCardViewModel>()
             .AddScoped<IDashboardViewModel, DashboardViewModel>()
+            .AddScoped<IInfoCardViewModel, InfoCardViewModel>()
+            .AddScoped<IMainViewModel, MainViewModel>()
+            .AddScoped<IMemoryViewModel, MemoryViewModel>()
             .AddTransient<DashboardView>()
             .AddTransient<InfoCardView>()
-            .AddTransient<MainView>();
+            .AddTransient<MainView>()
+            .AddTransient<MemoryView>();
         
         var serviceProvider = services.BuildServiceProvider();
         _mainViewModel = serviceProvider.GetRequiredService<IMainViewModel>();
@@ -35,6 +37,7 @@ public partial class App
     
     private void RunApplication()
     {
+        _mainViewModel.Load();
         _mainView.DataContext = _mainViewModel;
         _mainView.Show();
     }

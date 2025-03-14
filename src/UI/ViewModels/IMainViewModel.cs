@@ -1,5 +1,6 @@
 ﻿namespace UI.ViewModels;
 
-internal interface IMainViewModel
+internal interface IMainViewModel : IBaseViewModel
 {
+    void Load();
 }
