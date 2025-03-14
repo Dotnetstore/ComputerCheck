@@ -1,5 +1,5 @@
 ﻿namespace UI.ViewModels;
 
-public interface IMainViewModel
+internal interface IMainViewModel
 {
 }

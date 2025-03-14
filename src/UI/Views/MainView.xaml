@@ -8,6 +8,9 @@
         mc:Ignorable="d" Height="740" Width="1280" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         ResizeMode="NoResize">
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Alt" Key="F4" Command="{Binding Path=CloseApplicationCommand}" />
+    </Window.InputBindings>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -84,7 +87,9 @@
                     </StackPanel>
                 </Button>
                 
-                <Button Style="{StaticResource MenuButton}">
+                <Button 
+                    Style="{StaticResource MenuButton}"
+                    Command="{Binding CloseApplicationCommand}">
                     <StackPanel
                         Orientation="Horizontal">
                         <materialDesign:PackIcon
