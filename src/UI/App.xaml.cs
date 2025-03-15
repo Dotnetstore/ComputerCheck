@@ -21,12 +21,16 @@ public partial class App
         IServiceCollection services = new ServiceCollection();
         
         services
+            .AddScoped<ICpuViewModel, CpuViewModel>()
             .AddScoped<IDashboardViewModel, DashboardViewModel>()
             .AddScoped<IInfoCardViewModel, InfoCardViewModel>()
+            .AddScoped<ILiveMonitoringViewModel, LiveMonitoringViewModel>()
             .AddScoped<IMainViewModel, MainViewModel>()
             .AddScoped<IMemoryViewModel, MemoryViewModel>()
+            .AddTransient<CpuView>()
             .AddTransient<DashboardView>()
             .AddTransient<InfoCardView>()
+            .AddTransient<LiveMonitoringView>()
             .AddTransient<MainView>()
             .AddTransient<MemoryView>();
         

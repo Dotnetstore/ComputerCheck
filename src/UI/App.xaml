@@ -12,11 +12,17 @@
                  <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" /> 
              </ResourceDictionary.MergedDictionaries>
              
+             <DataTemplate DataType="{x:Type viewModels:CpuViewModel}">
+                 <views:CpuView/>
+             </DataTemplate>
              <DataTemplate DataType="{x:Type viewModels:DashboardViewModel}">
                  <views:DashboardView/>
              </DataTemplate>
              <DataTemplate DataType="{x:Type viewModels:InfoCardViewModel}">
                  <views:InfoCardView/>
+             </DataTemplate>
+             <DataTemplate DataType="{x:Type viewModels:LiveMonitoringViewModel}">
+                 <views:LiveMonitoringView/>
              </DataTemplate>
              <DataTemplate DataType="{x:Type viewModels:MainViewModel}">
                  <views:MainView/>

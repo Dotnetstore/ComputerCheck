@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="UI.Views.LiveMonitoringView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d">
+    <Grid>
+        <ListBox 
+            ItemsSource="{Binding MonitorService.Sensors}" 
+            Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="LightGray" BorderThickness="1" Margin="5" Padding="5">
+                        <StackPanel>
+                            <TextBlock 
+                                Text="{Binding Name}" 
+                                FontWeight="Bold"
+                                Foreground="White"/>
+                            <TextBlock 
+                                Text="Value:"
+                                Foreground="White" />
+                            <TextBlock 
+                                Text="{Binding Value}" 
+                                Foreground="White" />
+                            <TextBlock 
+                                Text="{Binding SensorType}" 
+                                FontStyle="Italic"
+                                Foreground="White" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

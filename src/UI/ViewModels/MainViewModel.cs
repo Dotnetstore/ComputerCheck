@@ -5,7 +5,9 @@ namespace UI.ViewModels;
 
 internal sealed class MainViewModel : ObservableObject, IMainViewModel
 {
+    private readonly ICpuViewModel _cpuViewModel;
     private readonly IDashboardViewModel _dashboardViewModel;
+    private readonly ILiveMonitoringViewModel _liveMonitoringViewModel;
     private readonly IMemoryViewModel _memoryViewModel;
     private IBaseViewModel _currentView = null!;
 
@@ -16,17 +18,25 @@ internal sealed class MainViewModel : ObservableObject, IMainViewModel
     }
 
     public IRelayCommand NavigateToDashboardViewCommand { get; set; }
+    public IRelayCommand NavigateToCpuViewCommand { get; set; }
+    public IRelayCommand NavigateToLiveMonitoringViewCommand { get; set; }
     public IRelayCommand NavigateToMemoryViewCommand { get; set; }
     public IRelayCommand CloseApplicationCommand { get; set; }
     
     public MainViewModel(
+        ICpuViewModel cpuViewModel,
         IDashboardViewModel dashboardViewModel,
+        ILiveMonitoringViewModel liveMonitoringViewModel,
         IMemoryViewModel memoryViewModel)
     {
+        _cpuViewModel = cpuViewModel;
         _dashboardViewModel = dashboardViewModel;
+        _liveMonitoringViewModel = liveMonitoringViewModel;
         _memoryViewModel = memoryViewModel;
         
         NavigateToDashboardViewCommand = new RelayCommand(NavigateToDashboardView);
+        NavigateToCpuViewCommand = new RelayCommand(NavigateToCpuView);
+        NavigateToLiveMonitoringViewCommand = new RelayCommand(NavigateToLiveMonitoringView);
         NavigateToMemoryViewCommand = new RelayCommand(NavigateToMemoryView);
         CloseApplicationCommand = new RelayCommand(CloseApplication);
     }
@@ -39,6 +49,18 @@ internal sealed class MainViewModel : ObservableObject, IMainViewModel
     private void NavigateToDashboardView()
     {
         SetCurrentView(_dashboardViewModel);
+    }
+
+    private void NavigateToCpuView()
+    {
+        _cpuViewModel.Load();
+        SetCurrentView(_cpuViewModel);
+    }
+
+    private void NavigateToLiveMonitoringView()
+    {
+        // _liveMonitoringViewModel.Load();
+        SetCurrentView(_liveMonitoringViewModel);
     }
 
     private void NavigateToMemoryView()

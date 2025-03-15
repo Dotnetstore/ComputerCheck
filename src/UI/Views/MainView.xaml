@@ -91,6 +91,34 @@
                 
                 <Button 
                     Style="{StaticResource MenuButton}"
+                    Command="{Binding NavigateToLiveMonitoringViewCommand}">
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <materialDesign:PackIcon
+                            Kind="GraphLine"
+                            Style="{StaticResource MenuButtonIcon}"/>
+                        <TextBlock
+                            Text="Live Monitoring"
+                            Style="{StaticResource MenuButtonText}"/>
+                    </StackPanel>
+                </Button>
+                
+                <Button 
+                    Style="{StaticResource MenuButton}"
+                    Command="{Binding NavigateToCpuViewCommand}">
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <materialDesign:PackIcon
+                            Kind="Cpu64Bit"
+                            Style="{StaticResource MenuButtonIcon}"/>
+                        <TextBlock
+                            Text="Cpu"
+                            Style="{StaticResource MenuButtonText}"/>
+                    </StackPanel>
+                </Button>
+                
+                <Button 
+                    Style="{StaticResource MenuButton}"
                     Command="{Binding NavigateToMemoryViewCommand}">
                     <StackPanel
                         Orientation="Horizontal">

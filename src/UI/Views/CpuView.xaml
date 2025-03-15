@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="UI.Views.CpuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:userControlTemplates="clr-namespace:UI.UserControlTemplates"
+             mc:Ignorable="d">
+    <Grid>
+        <ListBox
+            ItemsSource="{Binding Path=CpuInformationModels}"
+            HorizontalAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="0"
+                            DataText="Name:"
+                            DataValue="{Binding Name}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="1"
+                            DataText="Manufacturer:"
+                            DataValue="{Binding Manufacturer}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="2"
+                            DataText="Description:"
+                            DataValue="{Binding Description}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="3"
+                            DataText="Number of cores:"
+                            DataValue="{Binding NumberOfCores}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="4"
+                            DataText="Number of logical processors:"
+                            DataValue="{Binding NumberOfLogicalProcessors}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="5"
+                            DataText="Max clock speed:"
+                            DataValue="{Binding MaxClockSpeed}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="6"
+                            DataText="Architecture:"
+                            DataValue="{Binding Architecture}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="7"
+                            DataText="Processor Id:"
+                            DataValue="{Binding ProcessorId}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="8"
+                            DataText="L2 cache size:"
+                            DataValue="{Binding L2CacheSize}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="9"
+                            DataText="L3 cache size:"
+                            DataValue="{Binding L3CacheSize}"/>
+                        <userControlTemplates:ThreeColGridTemplate
+                            Grid.Row="10"
+                            DataText="Socket designation:"
+                            DataValue="{Binding SocketDesignation}"/>
+                        <Separator
+                            Grid.Row="11"
+                            Height="1"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
